@@ -14,10 +14,6 @@ def login_and_save_auth():
         st.write("DEBUG: login_and_save_auth вызвана")
         st.write(f"BASE_URL = {BASE_URL}")
 
-        print("=== DEBUG SECRETS ===")
-        print("BASE_URL:", BASE_URL)
-        print("USERNAME", USERNAME)
-
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=HEADLESS)
             context = browser.new_context(ignore_https_errors=True)
@@ -25,23 +21,30 @@ def login_and_save_auth():
 
             page.goto(f"{BASE_URL}/auth")
 
+            st.write(f"{BASE_URL}/auth")
+
             page.fill("input[type='text']", USERNAME)
             page.fill("input[type='password']", PASSWORD)
 
+            st.write("LOGIN AND PASSWORD DONE")
+            
             page.click("button:has-text('Войти')")
 
             # ждём выхода из логина
             page.wait_for_url(lambda url: "/auth" not in url, timeout=30000)
 
-            print("CURRENT_URL", page.url)
+            #print("CURRENT_URL", page.url)
+            st.write("f"CURRENT_URL = {BASE_URL}"")
 
-            context.storage_state(path=AUTH_FILE)
+            context.storage_state(path=page.url)
 
-            print("✅ AUTH SAVED")
+            st.write("✅ AUTH SAVED")
+            #print("✅ AUTH SAVED")
 
             browser.close()
             return True
 
     except Exception as e:
-        print(f"LOGIN ERROR: {e}")
+        st.write("f"LOGIN ERROR: {e}")
+        #print(f"LOGIN ERROR: {e}")
         return False
