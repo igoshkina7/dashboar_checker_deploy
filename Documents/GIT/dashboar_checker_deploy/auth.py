@@ -1,36 +1,42 @@
+import streamlit as st
 from playwright.sync_api import sync_playwright
-from config import *
 
-# ==========================
-# СОХРАНЕНИЕ СЕССИИ
-# ==========================
+AUTH_FILE = "auth.json"
+HEADLESS = True
+
 
 def login_and_save_auth():
     try:
+        # берём секреты напрямую из Streamlit
+        BASE_URL = st.secrets["BASE_URL"]
+        USERNAME = st.secrets["USERNAME"]
+        PASSWORD = st.secrets["PASSWORD"]
+
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=HEADLESS)
             context = browser.new_context(ignore_https_errors=True)
             page = context.new_page()
 
-            print("BASE_URL":", BASE_URL)
-            print("USERNAME":", USERNAME)
-            print("PASSWORD":", PASSWORD)
+            print("BASE_URL:", BASE_URL)
+            print("USERNAME:", USERNAME)
 
             page.goto(f"{BASE_URL}/auth")
+
             page.fill("input[type='text']", USERNAME)
             page.fill("input[type='password']", PASSWORD)
+
             page.click("button:has-text('Войти')")
-            page.wait_for_load_state("networkidle")
+
+            # ждём выхода из логина
+            page.wait_for_url(lambda url: "/auth" not in url, timeout=30000)
 
             context.storage_state(path=AUTH_FILE)
+
             print("✅ AUTH SAVED")
+
             browser.close()
             return True
+
     except Exception as e:
         print(f"❌ Ошибка логина: {e}")
         return False
-        browser.close()
-
-
-if __name__ == "__main__":
-    login_and_save_auth()
