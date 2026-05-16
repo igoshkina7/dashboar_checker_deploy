@@ -12,7 +12,7 @@ if "log" not in st.session_state:
     
 def add_log(message: str):
     st.session_state["log"] += message +"\n"
-    st.rerun()
+    #st.rerun()
     
 
 def ensure_auth():
