@@ -1,8 +1,7 @@
 import streamlit as st
 from playwright.sync_api import sync_playwright
+from settings import AUTH_FILE, HEADLESS
 
-AUTH_FILE = "auth.json"
-HEADLESS = True
 
 
 def login_and_save_auth():
