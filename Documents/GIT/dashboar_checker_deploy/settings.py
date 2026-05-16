@@ -1,1 +1,2 @@
-AUTH_FILE="auth.json"
+AUTH_FILE = "auth.json"
+HEADLESS = True
