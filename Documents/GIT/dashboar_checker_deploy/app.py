@@ -3,6 +3,7 @@ from auth import login_and_save_auth
 from checker import run_checks
 from config import AUTH_FILE
 import os
+os.system("playwright install chromium")
 
 st.title("📊 Dashboard Checker")
 
