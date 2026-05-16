@@ -43,12 +43,10 @@ if st.button("🔍 Запустить проверку"):
         text = ""
         for r in results:
             text += f"{r.name}\n"
-            text += "✅ OK\n" 
             if r.success:
                 add_log(f"✅{r.name} - OK")
             else: 
                 add_log(f"❌{r.name} - {r.message}")
-                f"❌ {r.message}\n"
             text += "\n"
 
         add_log("DONE")
