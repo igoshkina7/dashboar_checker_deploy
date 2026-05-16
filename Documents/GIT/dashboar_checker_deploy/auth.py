@@ -12,6 +12,10 @@ def login_and_save_auth():
             context = browser.new_context(ignore_https_errors=True)
             page = context.new_page()
 
+            print("BASE_URL":", BASE_URL)
+            print("USERNAME":", USERNAME)
+            print("PASSWORD":", PASSWORD)
+
             page.goto(f"{BASE_URL}/auth")
             page.fill("input[type='text']", USERNAME)
             page.fill("input[type='password']", PASSWORD)
