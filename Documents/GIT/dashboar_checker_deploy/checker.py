@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright, expect
-from config import *
+from settings import *
 from pages import PAGES
 import os
 
