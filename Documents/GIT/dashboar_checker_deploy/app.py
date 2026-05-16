@@ -1,7 +1,7 @@
 import streamlit as st
 from auth import login_and_save_auth
 from checker import run_checks
-from config import AUTH_FILE
+from settings import *
 import os
 os.system("playwright install chromium")
 
