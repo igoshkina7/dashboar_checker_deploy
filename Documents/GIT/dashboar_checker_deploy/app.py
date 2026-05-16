@@ -7,6 +7,20 @@ os.system("playwright install chromium")
 
 st.title("📊 Dashboard Checker")
 
+if "log" not in st.session_state:
+    st.session_state["log"]=""
+
+    try:
+            st.session_state["log"] += "⏳ RUN CHECKS\n"
+    
+            from checker import run_checks
+            results = run_checks()
+    
+            st.session_state["log"] += "✅ DONE\n"
+
+    except Exception as e:
+        st.session_state["log"] += f"❌ ERROR: {e}\n"
+
 def ensure_auth():
 
     # всегда создаём новую сессию
