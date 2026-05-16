@@ -1,0 +1,22 @@
+PAGES = {
+    "Главная страница ФД": "/interface/dqbsdui/sensor/dashboard/cash-register-main?hideMenu=true",
+    "Финансы. Стартовая страница": "/interface/dqbsdui/sensor/homepage/dashboard/start_page_finance?hideMenu=true",
+    "Монитор по кассе": "/interface/dqbsdui/sensor/financialdashboards/dashboard/cashMon?hideMenu=true",  
+    "Монитор по начислениям": "/interface/dqbsdui/sensor/financialdashboards/dashboard/implementation_unification?hideMenu=true",
+    "Контроль выполнения плана по начислениям": "/interface/dqbsdui/sensor/financialdashboards/dashboard/quarter_plan?hideMenu=true",
+    "ФПК по ПЦ": "/interface/dqbsdui/sensor/financialdashboards/dashboard/fpk_pc?hideMenu=true",
+    "Финансовые показатели": "/interface/dqbsdui/sensor/financialdashboards/dashboard/sdMonDir?hideMenu=true",
+    "Задолженность клиентов": "/interface/dqbsdui/sensor/financialdashboards/dashboard/d_c?hideMenu=true",
+    "Монитор ЦРБ": "/interface/dqbsdui/sensor/financialdashboards/dashboard/crb?hideMenu=true",
+    "Закрытые проекты": "/interface/dqbsdui/sensor/projectdashboards/dashboard/closedCircles1_2?hideMenu=true",
+    "Клиенты": "/interface/dqbsdui/sensor/projectdashboards/dashboard/clients_unification?hideMenu=true",
+    "Показатели ДПРП": "/interface/dqbsdui/sensor/staffdashboards/dashboard/dprp_full?hideMenu=true",
+    "Лимиты ФОТ": "/interface/dqbsdui/sensor/staffdashboards/dashboard/fot_limits?hideMenu=true",
+    "Монитор ФОТ": "/interface/dqbsdui/sensor/staffdashboards/dashboard/averageFOT?hideMenu=true",
+    "Компания мечты": "/interface/dqbsdui/sensor/staffdashboards/dashboard/dream_company?hideMenu=true",
+    "Диамаркет": "/interface/dqbsdui/sensor/staffdashboards/dashboard/diamarket?hideMenu=true",
+    "Резервный фонд": "/interface/dqbsdui/sensor/companydashboards/dashboard/Invest_prototype_unification?hideMenu=true",
+    "Производственный дашборд": "/interface/dqbsdui/sensor/qtscsensor/dashboard/FocusFactorNew?hideMenu=true",
+    "Дашборд по статистике": "/interface/dqbsdui/sensor/staffdashboards/dashboard/statistica?hideMenu=true",
+    #"Управление инцидентами": "/interface/qdcpdui/qdcpd/qpd-lichnyjkabinet-main"
+}
