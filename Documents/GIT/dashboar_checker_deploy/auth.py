@@ -11,6 +11,9 @@ def login_and_save_auth():
         USERNAME = st.secrets["USERNAME"]
         PASSWORD = st.secrets["PASSWORD"]
 
+        st.write("DEBUG: login_and_save_auth вызвана")
+        st.write(f"BASE_URL = {BASE_URL}")
+
         print("=== DEBUG SECRETS ===")
         print("BASE_URL:", BASE_URL)
         print("USERNAME", USERNAME)
