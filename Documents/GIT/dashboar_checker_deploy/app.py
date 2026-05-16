@@ -59,9 +59,9 @@ if st.button("🔍 Запустить проверку"):
         add_log(f"ERROR: {e}")
         st.error(f"❌ Ошибка: {e}")
 
-st.subheader ("Лог выполнения")
+st.subheader("Лог выполнения")
 st.text_area(
-    "debug log"
-    value = st.session_state["log"]
+    "debug log",
+    value = st.session_state["log"],
     height=300
     )
